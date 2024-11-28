@@ -1,7 +1,7 @@
 import React, { ChangeEvent, useState } from "react"
 import SearchIcon from '@mui/icons-material/Search'
 import { Box, InputBase, Paper } from "@mui/material"
-import { useDispatch } from 'react-redux'
+import { useDispatch } from "../hooks/useTypedDispatch"
 import { filtrarTexto } from '../actions/filtrarAction'
 
 export const FiltrarAgenda: React.FC = () => {
