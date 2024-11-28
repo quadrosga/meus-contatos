@@ -1,10 +1,9 @@
-import EstiloGlobal from './styles';
 import React from 'react';
 import { useSelector } from "react-redux";
 import { useDispatch } from "./hooks/useTypedDispatch"
 import { AddAgenda } from './components/AddAgenda';
-import { Typography } from '@mui/material';
-import Grid from '@mui/material/Grid';
+import { Typography } from './styles/TypographyStyled';
+import { GridContainer, GridItem } from './styles/GridStyled'
 import { armazenaAgendaFiltrada } from './utils/utils'
 import { addAgenda } from './actions/addAgendaAction';
 import { RootState } from './store';
@@ -24,20 +23,18 @@ const App: React.FC = () => {
 
   return (
     <main>
-      <Typography sx={{ m: '60px' }} variant="h4" align="center" color="textPrimary" display="block" gutterBottom >
+      <Typography align="center">
         Agenda
       </Typography>
-      <Grid container spacing={2}>
-  <Grid item xs={12} md={6} lg={6}>
-    <AddAgenda salvarAgenda={salvarAgenda} />
-  </Grid>
-  <Grid item xs={12} md={6} lg={6}>
-    <div className='content'>
-      <FiltrarAgenda />
-      <TabelaAgenda agendas={agendaFiltrata} />
-    </div>
-  </Grid>
-</Grid>
+      <GridContainer>
+        <GridItem>
+          <AddAgenda salvarAgenda={salvarAgenda} />
+        </GridItem>
+        <GridItem>
+          <FiltrarAgenda />
+          <TabelaAgenda agendas={agendaFiltrata} />
+        </GridItem>
+      </GridContainer>
     </main>
   );
 }
