@@ -7,13 +7,11 @@ export interface IAgenda {
   telefone: string
 }
 
+export interface AgendaAction {
+  type: typeof ADD_AGENDA;
+  payload: IAgenda;
+}
+
 export interface AgendaState {
-  agenda: IAgenda[]
+  agendas: IAgenda[];
 }
-
-interface AddAgenda {
-  type: typeof ADD_AGENDA
-  payload: IAgenda
-}
-
-export type AgendaAction = AddAgenda
